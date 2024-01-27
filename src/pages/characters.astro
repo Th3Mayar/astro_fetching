@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const characters = await fetch(
+  "https://api-morty-products.vercel.app/characters"
+).then((data) => data.json());
+---
+
+<Layout title="Astro Product page">
+  <main>
+    <h1>Character data API: <span class="link"><a href="https://api-morty-products.vercel.app/characters">https://api-morty-products.vercel.app/characters</a></span></h1>
+    <section>
+      {
+        characters.map((character) => (
+          <div>
+            <ul>
+              <li><span>Name:</span> {character.name}</li>
+              <li class="img">
+                <img
+                  class="img"
+                  loading="lazy"
+                  src={character.image}
+                />
+              </li>
+            </ul>
+          </div>
+        ))
+      }
+    </section>
+    <footer>
+      <p>
+        <span>© 2024 - CODESYS </span>
+        <a href="https://api-morty-products.vercel.app/characters">Morty Products</a>
+      </p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  section{
+    margin: 20px 20px 20px 20px;
+    padding: 1rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    text-align: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    margin: 20px auto 1px auto;
+  }
+
+  div{
+    background-color: #3b1447;
+    padding: 1rem;
+    border-radius: 10px;
+    border: #fff 1px solid;
+    cursor: pointer;
+    transition: transform .2s;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  span{
+    font-weight: bold;
+    color: #76757c;
+  }
+  
+  h1{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+  }
+
+  .link{
+    text-wrap: wrap;
+    font-size: 30px;
+    font-weight: normal;
+    color: #76757c;
+  }
+</style>
