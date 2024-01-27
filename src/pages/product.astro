@@ -16,7 +16,7 @@ console.log(products);
             <li>Name: {product.name}</li>
             <li>Category: {product.category}</li>
             <li>Precio: {product.price}</li>
-            <li><img loading="lazy" src={product.img} width="200px" height="100px"/></li>
+            <li class="img" ><img class="img" loading="lazy" src={product.img} width="200px" height="100px"/></li>
           </ul>
         ))
       }
@@ -35,7 +35,8 @@ console.log(products);
     gap: 30px;
   }
 
-  img {
-    padding: 20px;
+  .img {
+    width: 200px;
+    height: 250px;
   }
 </style>

@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 const Data = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        async function getData () {
+        async function getData() {
             const data = await fetch('https://api-product-morty.vercel.app/characters')
                 .then(res => res.json())
             setData(data)
         }
         getData()
-    }, []);
-    
+    }, []);
+
     return (
         <div>
             <ul>
@@ -18,7 +18,9 @@ const Data = () => {
                     data.map((result) => (
                         <section>
                             <li key={result.id}>{result.name}</li>
-                            <img loading="lazy" key={result.id} src={result.image} alt={`img${result.id}`}/>
+                            <div className="w-[200px] h-[200px]">
+                                <img className="w-[200px] h-[200px]" loading="lazy" key={result.id} src={result.image} alt={`img${result.id}`} />
+                            </div>
                         </section>
                     ))
                 }
