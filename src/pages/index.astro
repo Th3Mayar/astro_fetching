@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Data from "../components/Data";
+---
+
+<Layout title="Astro fetch">
+  <main>
+    <Data client:load/>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
