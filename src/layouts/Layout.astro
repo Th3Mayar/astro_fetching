@@ -18,6 +18,13 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<section>
+			<ul>
+			  <li><a href="/">Home</a></li>
+			  <li><a href="/product">Product</a></li>
+			  <li><a href="characters">characters</a></li>
+			</ul>
+		  </section>
 	</body>
 </html>
 <style is:global>
