@@ -18,7 +18,7 @@ const Data = () => {
                     data.map((result) => (
                         <section>
                             <li key={result.id}>{result.name}</li>
-                            <img loading="lazy" key={result.id} src={result.image}/>
+                            <img loading="lazy" key={result.id} src={result.image} alt={`img${result.id}`}/>
                         </section>
                     ))
                 }
