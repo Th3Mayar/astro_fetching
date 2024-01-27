@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 const products = await fetch("https://api-morty-products.vercel.app/products").then((data) =>
   data.json()
 );
-
 ---
 
 <Layout title="Astro Product page">
