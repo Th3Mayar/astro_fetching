@@ -64,8 +64,8 @@ const products = await fetch(
   }
 
   .img {
-    width: 200px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     margin: 20px auto 1px auto;
   }
@@ -99,5 +99,10 @@ const products = await fetch(
     font-size: 30px;
     font-weight: normal;
     color: #76757c;
+  }
+  @media screen and (max-width: 768px) {
+    section{
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
   }
 </style>

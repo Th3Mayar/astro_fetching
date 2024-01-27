@@ -4,7 +4,7 @@ const Data = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         async function getData() {
-            const data = await fetch('https://api-product-morty.vercel.app/characters')
+            const data = await fetch('https://api-morty-products.vercel.app/characters')
                 .then(res => res.json())
             setData(data)
         }
