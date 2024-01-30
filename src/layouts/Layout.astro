@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import "@fortawesome/fontawesome-free/css/all.css";
 ---
 
 <!doctype html>
@@ -17,6 +19,22 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <ul class="menu">
+      <li>
+        <a href="#"
+          ><i class="fa-solid fa-house" style="color: #ffffff;"></i>Home</a>
+      </li>
+      <li>
+        <a href="#"
+          ><i class="fa-brands fa-product-hunt" style="color: #ffffff;"
+          ></i>Products</a>
+      </li>
+      <li>
+        <a href="#"
+          ><i class="fa-brands fa-uncharted" style="color: #ffffff;"
+          ></i>Characters</a>
+      </li>
+    </ul>
     <slot />
   </body>
 </html>
@@ -49,5 +67,40 @@ const { title } = Astro.props;
       monospace;
   }
 
-  
+  .menu {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    background-color: rgb(43, 6, 43);
+    display: flex;
+    gap: 10px;
+    border-bottom: #ffffff 1px solid;
+  }
+
+  .menu li {
+    margin-right: 10px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .menu li a:hover {
+    background-color: #926192;
+    color: #fff;
+  }
+  i{
+    margin-right: 6px;
+  }
 </style>
