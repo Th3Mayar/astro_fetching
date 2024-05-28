@@ -1,8 +1,8 @@
 <main>
   <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/product">Product</a></li>
-    <li><a href="characters">characters</a></li>
+    <li class="product"><a href="/product">Product</a></li>
+    <li class="character"><a href="characters">characters</a></li>
   </ul>
 </main>
 
@@ -54,8 +54,32 @@
     color: #fff;
     font-family: Arial, sans-serif;
     font-size: 18px;
+    position: relative;
+    transform-origin: center;
   }
   li:hover {
     background-color: #2980b9;
+  }
+  .product:hover a{
+    animation: rotateProduct 2s linear forwards;
+  }
+  .character:hover a {
+    animation: rotateCharacter 1s linear forwards;
+  }
+  @keyframes rotateProduct {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(240deg);
+    }
+  }
+  @keyframes rotateCharacter {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(120deg);
+    }
   }
 </style>
