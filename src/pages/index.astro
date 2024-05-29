@@ -1,8 +1,8 @@
 <main>
   <ul>
     <li><a href="/">Home</a></li>
-    <li class="product"><a href="/product">Product</a></li>
-    <li class="character"><a href="characters">characters</a></li>
+    <li class="product"><a href="/product">Products</a></li>
+    <li class="character"><a href="characters">Characters</a></li>
   </ul>
 </main>
 
@@ -60,18 +60,26 @@
   li:hover {
     background-color: #2980b9;
   }
-  .product:hover a{
-    animation: rotateProduct 2s linear forwards;
+  .product:hover a {
+    animation: rotateProduct 0.8s linear forwards;
   }
   .character:hover a {
     animation: rotateCharacter 1s linear forwards;
   }
   @keyframes rotateProduct {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(140deg);
     }
     100% {
       transform: rotate(240deg);
+      /* border-radius: 50%;
+      background-color: #2980b9;
+      width: 500px;
+      height: 500px;
+      margin-top: -50px;
+      margin-left: -250px;
+      border: 1px solid #fff;
+      font-size: 38px; */
     }
   }
   @keyframes rotateCharacter {
@@ -80,6 +88,14 @@
     }
     100% {
       transform: rotate(120deg);
+      border-radius: 50%;
+      background-color: #2980b9;
+      width: 500px;
+      height: 500px;
+      margin-top: -50px;
+      margin-left: -120px;
+      border: 1px solid #fff;
+      font-size: 38px;
     }
   }
 </style>
